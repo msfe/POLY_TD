@@ -1,0 +1,22 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class EnemyBehaviour : MonoBehaviour {
+
+	// Use this for initialization
+	void Start () 
+    {
+	
+	}
+	
+	// Update is called once per frame
+	void Update () 
+    {
+	
+	}
+
+    void FixedUpdate()
+    {
+        rigidbody2D.AddForce(new Vector2(3, 0));
+    }
+}
