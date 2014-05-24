@@ -6,7 +6,6 @@ public class HeroBehaviour : MonoBehaviour {
     public float MaxMoveForce;
     public float MoveForce;
     public float Torque;
-    public Transform BulletPrefab;
 
     private Vector2 _moveTarget;
     private bool selected;
@@ -30,15 +29,6 @@ public class HeroBehaviour : MonoBehaviour {
             toMouse.Normalize();
             _targetLookAt = toMouse;
         }
-        if (Input.GetMouseButton(2))
-        {
-            Transform t = (Transform)Instantiate(BulletPrefab, transform.position, Quaternion.identity);
-
-            Vector2 dir = Vec.xy(transform.rotation * Vector3.up) + 0.5f * Random.insideUnitCircle;
-            dir.Normalize();
-            t.rigidbody2D.velocity = -5.0f * dir;
-
-        }
 	}
 
     void FixedUpdate()
@@ -61,4 +51,8 @@ public class HeroBehaviour : MonoBehaviour {
         _targetLookAt = target - Vec.xy(transform.position);
         _targetLookAt.Normalize();
     }
+
+	public bool isStanding(){
+		return rigidbody2D.velocity.magnitude < 0.01f;
+	}
 }
