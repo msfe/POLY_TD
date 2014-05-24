@@ -63,5 +63,14 @@ TextureImporter:
         height: 156
       alignment: 0
       pivot: {x: .5, y: .5}
+    - name: hollowcircle
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 300
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: .5, y: .5}
   spritePackingTag: 
   userData: 

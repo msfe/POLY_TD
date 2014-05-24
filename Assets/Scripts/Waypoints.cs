@@ -29,13 +29,14 @@ public class Waypoints : MonoBehaviour {
 	/**
 	 * Get total length of the path
 	 **/
-	float getLength () {
+	public float getLength () {
 		return length;
 		}
 	/*
 	 *  
 	 */
-	Vector2 getPoint(float dist) {
+    public Vector2 getPoint(float dist)
+    {
 		if (dist <= 0) {
 			return wayPoints[0];
 		}

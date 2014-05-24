@@ -7,6 +7,7 @@ public class EnemyBehaviour : MonoBehaviour {
     public float MoveForce;
     public float AngularForce;
     public float Drag { get { return rigidbody2D.drag; } set { rigidbody2D.drag = value; } }
+    public Waypoints _waypoints;
 
 
 	void Start () 
@@ -15,7 +16,6 @@ public class EnemyBehaviour : MonoBehaviour {
 	
 	void Update () 
     {
-	
 	}
 
     void FixedUpdate()
