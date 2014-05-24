@@ -12,6 +12,7 @@ GameObject:
   - 58: {fileID: 5800000}
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -25,8 +26,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: -.745253861, w: -.666780889}
-  m_LocalPosition: {x: -2.25743699, y: -5.74290705, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0563348532, y: -4.38911057, z: 0}
   m_LocalScale: {x: .310940474, y: .310940623, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -67,10 +68,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7066ba45df031b4595e7013a41486d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveTarget: {x: -2.14897609, y: -4.67833185}
+  MoveTarget: {x: -.150000006, y: -4.67833185}
   MoveForce: 1.74000001
   AngularForce: .310000002
   _waypoints: {fileID: 0}
+  ATTACK_DOWNTIME: 60
+  ATTACK_DAMAGE: 5
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e2a65b27c6c474dab98a63a8bb46d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

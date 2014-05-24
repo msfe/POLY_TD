@@ -45,7 +45,7 @@ public class HeroBehaviour : MonoBehaviour {
     {
         Vector2 toTarget = _moveTarget - Vec.xy(transform.position);
         float dist = toTarget.magnitude;
-        toTarget /= dist;
+        toTarget /= dist + 0.0001f;
         dist = Mathf.Clamp(dist * MoveForce, 0, MaxMoveForce);     
         rigidbody2D.AddForce(dist * toTarget);
 

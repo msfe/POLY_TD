@@ -26,6 +26,9 @@ public class SingleUnitGroup : MonoBehaviour
         bool update = false;
         foreach (var enemy in _members.enemies)
         {
+			if(enemy == null)
+				continue;
+
             float dist = Vector2.Distance(_target, Vec.xy(enemy.transform.position));
             if (dist < _continueDistance)
             {
