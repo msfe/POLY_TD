@@ -20,7 +20,7 @@ public class BulletCollision : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D(Collider2D collider){
-	
+		
 		if (collider.gameObject.tag == "Bullet") {
 			
 			_enemy.rigidbody2D.AddForceAtPosition(ImpulseMagnitude * collider.rigidbody2D.velocity.normalized / Time.fixedDeltaTime, collider.transform.position);
