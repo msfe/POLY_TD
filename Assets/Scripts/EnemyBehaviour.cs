@@ -3,13 +3,16 @@ using System.Collections;
 
 public class EnemyBehaviour : MonoBehaviour {
 
-	// Use this for initialization
+    public Vector2 MoveTarget;
+    public float MoveForce;
+    public float AngularForce;
+    public float Drag { get { return rigidbody2D.drag; } set { rigidbody2D.drag = value; } }
+
+
 	void Start () 
     {
-	
 	}
 	
-	// Update is called once per frame
 	void Update () 
     {
 	
@@ -17,6 +20,15 @@ public class EnemyBehaviour : MonoBehaviour {
 
     void FixedUpdate()
     {
-        rigidbody2D.AddForce(new Vector2(3, 0));
+        Vector2 toTarget = Vec.xy(transform.position) - MoveTarget;
+        float dist = toTarget.magnitude;
+        toTarget /= dist;
+
+        Vector2 look = transform.rotation * Vector3.up;
+        Vector2 lookPerp = Vec.PerpendicularCW(look);
+        float rot = Vector2.Dot(lookPerp, toTarget);
+
+        rigidbody2D.AddForce(look * MoveForce);
+        rigidbody2D.AddTorque(rot * AngularForce);
     }
 }
