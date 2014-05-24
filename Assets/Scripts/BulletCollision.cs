@@ -3,12 +3,15 @@ using System.Collections;
 
 public class BulletCollision : MonoBehaviour {
 	
-	EnemyBehaviour _enemy;
+	public EnemyBehaviour _enemy;
 	public float ImpulseMagnitude = 0.7f; 
 	
 	// Use this for initialization
 	void Start () {
-		_enemy = this.GetComponent<EnemyBehaviour>();
+		//_enemy = this.GetComponent<EnemyBehaviour>();
+		if(_enemy == null)
+			_enemy = GetComponentInChildren<EnemyBehaviour> ();
+
 	}
 	
 	// Update is called once per frame
@@ -20,7 +23,7 @@ public class BulletCollision : MonoBehaviour {
 	
 		if (collider.gameObject.tag == "Bullet") {
 			
-			rigidbody2D.AddForceAtPosition(ImpulseMagnitude * collider.rigidbody2D.velocity.normalized / Time.fixedDeltaTime, collider.transform.position);
+			_enemy.rigidbody2D.AddForceAtPosition(ImpulseMagnitude * collider.rigidbody2D.velocity.normalized / Time.fixedDeltaTime, collider.transform.position);
 
 			_enemy.takeDamage(1);
 			Destroy(collider.gameObject);
