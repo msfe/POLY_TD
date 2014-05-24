@@ -88,7 +88,7 @@ GameObject:
   - 96: {fileID: 148747521}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1332,6 +1332,10 @@ Prefab:
       propertyPath: AngularForce
       value: .310000002
       objectReference: {fileID: 0}
+    - target: {fileID: 5800000, guid: 12c9e00050636ed499101802be9a5f95, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 12c9e00050636ed499101802be9a5f95, type: 2}
   m_RootGameObject: {fileID: 2062490311}
@@ -1389,6 +1393,7 @@ GameObject:
   - 58: {fileID: 2062490314}
   - 50: {fileID: 2062490313}
   - 114: {fileID: 2062490312}
+  - 114: {fileID: 2062490317}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1476,3 +1481,14 @@ Transform:
   m_LocalScale: {x: .310940474, y: .310940623, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &2062490317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2062490311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e2a65b27c6c474dab98a63a8bb46d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -14,9 +14,15 @@ public class EnemyBehaviour : MonoBehaviour {
 	private bool _closeToOrphanage;
 	private float fireCounter;
 
+	public float Health{
+		get;
+		private set;
+	}
+
 
 	void Start () 
     {
+		Health = 20;
 		_closeToOrphanage = true;
 		fireCounter = 0;
 	}
@@ -37,6 +43,16 @@ public class EnemyBehaviour : MonoBehaviour {
 
 	private void Attack(){
 		OrphanageBehaviour.s_ORPHANAGE.damage (ATTACK_DAMAGE);
+	}
+
+	public void takeDamage(float damage) {
+		if (damage < 0) {
+				return;
+		}
+		Health -= damage;
+		if (Health <= 0) { //Dead
+				Destroy (this.gameObject);
+		}
 	}
 
 	public void setCloseToOrphanage(bool closeToOrphanage)

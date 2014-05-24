@@ -10,7 +10,7 @@ public class OrphanageBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		s_ORPHANAGE = new OrphanageBehaviour();
+		s_ORPHANAGE = this;
 		s_ORPHANAGE.setHealth(100);
 		s_ORPHANAGE.setDestroyed(false);
 	}
