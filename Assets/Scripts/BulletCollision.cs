@@ -4,6 +4,7 @@ using System.Collections;
 public class BulletCollision : MonoBehaviour {
 	
 	EnemyBehaviour _enemy;
+	public float ImpulseMagnitude = 0.7f; 
 	
 	// Use this for initialization
 	void Start () {
@@ -16,8 +17,12 @@ public class BulletCollision : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D(Collider2D collider){
+		
 		if (collider.gameObject.tag == "Bullet") {
-			_enemy.takeDamage(10);
+			
+			rigidbody2D.AddForceAtPosition(ImpulseMagnitude * collider.rigidbody2D.velocity.normalized / Time.fixedDeltaTime, collider.transform.position);
+
+			_enemy.takeDamage(1);
 			Destroy(collider.gameObject);
 		}
 	}

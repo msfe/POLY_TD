@@ -1486,8 +1486,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveTarget: {x: -.150000006, y: -4.67833185}
-  MoveForce: 1.74000001
-  AngularForce: .310000002
+  MoveForce: 1.42999995
+  AngularForce: .159999996
   _waypoints: {fileID: 0}
   ATTACK_DOWNTIME: 60
   ATTACK_DAMAGE: 5
@@ -1566,6 +1566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e2a65b27c6c474dab98a63a8bb46d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ImpulseMagnitude: .300000012
 --- !u!1001 &2086507532
 Prefab:
   m_ObjectHideFlags: 0
