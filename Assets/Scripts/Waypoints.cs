@@ -24,11 +24,6 @@ public class Waypoints : MonoBehaviour {
 
 			length += Mathf.Abs(Vector2.Distance(former,next));
 		}
-
-		print(length);
-		for (float i = 0; i<=25; i+=1) {
-			print (getPoint (i));
-		}
 	}
 
 	/**
