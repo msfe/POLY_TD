@@ -6,9 +6,10 @@ public class Shotgun : MonoBehaviour {
 	public Transform BulletPrefab;
 	private HeroBehaviour hero;
 
-	private float ATTACK_DOWNTIME = 90;
+	private float ATTACK_DOWNTIME = 90.0f;
 	private float BULLET_SPREAD = 0.3f;
 	private float BULLET_SPEED = 5.0f;
+	private float BULLET_DAMAGE = 4.0f;
 
 	private float fireCounter;
 
@@ -37,7 +38,9 @@ public class Shotgun : MonoBehaviour {
 
 	public void Attack(){
 		Transform t = (Transform)Instantiate (BulletPrefab, transform.position, Quaternion.identity);
-	
+		BulletData bullet = t.GetComponent<BulletData> ();
+		bullet.Damage = BULLET_DAMAGE;
+		bullet.AutoAiming = false;
 		Vector2 dir = Vec.xy (transform.rotation * Vector3.up) + BULLET_SPREAD * Random.insideUnitCircle;
 		dir.Normalize ();
 		t.rigidbody2D.velocity = -BULLET_SPEED * dir;

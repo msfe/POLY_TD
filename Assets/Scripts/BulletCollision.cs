@@ -21,8 +21,8 @@ public class BulletCollision : MonoBehaviour {
 		if (collider.gameObject.tag == "Bullet") {
 			
 			rigidbody2D.AddForceAtPosition(ImpulseMagnitude * collider.rigidbody2D.velocity.normalized / Time.fixedDeltaTime, collider.transform.position);
-
-			_enemy.takeDamage(1);
+			BulletData bullet = collider.GetComponent<BulletData>();
+			_enemy.takeDamage(bullet.Damage);
 			Destroy(collider.gameObject);
 		}
 	}

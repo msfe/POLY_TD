@@ -256,6 +256,7 @@ GameObject:
   - 58: {fileID: 389698964}
   - 50: {fileID: 389698963}
   - 114: {fileID: 389698962}
+  - 114: {fileID: 389698967}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -278,7 +279,6 @@ MonoBehaviour:
   MaxMoveForce: 2.6400001
   MoveForce: 1.90999997
   Torque: 1.67999995
-  BulletPrefab: {fileID: 400000, guid: 70e93b17f3e143c4e9085531d92ee050, type: 2}
 --- !u!50 &389698963
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -343,6 +343,18 @@ Transform:
   m_Children:
   - {fileID: 1098652756}
   m_Father: {fileID: 0}
+--- !u!114 &389698967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 389698961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d09a9bfa6239c441848f383dc68cd73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 400000, guid: 70e93b17f3e143c4e9085531d92ee050, type: 2}
 --- !u!1 &440796887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,7 +1578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e2a65b27c6c474dab98a63a8bb46d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImpulseMagnitude: .300000012
+  ImpulseMagnitude: .699999988
 --- !u!1001 &2086507532
 Prefab:
   m_ObjectHideFlags: 0
