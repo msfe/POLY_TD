@@ -6,6 +6,7 @@ public class HeroBehaviour : MonoBehaviour {
     public float MaxMoveForce;
     public float MoveForce;
     public float Torque;
+    public Transform BulletPrefab;
 
     private Vector2 _moveTarget;
     private bool selected;
@@ -22,12 +23,21 @@ public class HeroBehaviour : MonoBehaviour {
         {
              Move(Vec.xy(Camera.main.ScreenToWorldPoint(Input.mousePosition)));
         }
-        else if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1))
         {
             Vector2 mousePos = Vec.xy(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             Vector2 toMouse = mousePos - Vec.xy(transform.position);
             toMouse.Normalize();
             _targetLookAt = toMouse;
+        }
+        if (Input.GetMouseButton(2))
+        {
+            Transform t = (Transform)Instantiate(BulletPrefab, transform.position, Quaternion.identity);
+
+            Vector2 dir = Vec.xy(transform.rotation * Vector3.up) + 0.5f * Random.insideUnitCircle;
+            dir.Normalize();
+            t.rigidbody2D.velocity = -5.0f * dir;
+
         }
 	}
 
