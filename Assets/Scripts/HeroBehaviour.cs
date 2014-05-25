@@ -10,25 +10,39 @@ public class HeroBehaviour : MonoBehaviour {
     private Vector2 _moveTarget;
     private bool selected;
     private Vector2 _targetLookAt;
+	private bool _active;
+	private Color _startcolor;
 
 	void Start () 
     {
-	    
+		_active = false;
+		_startcolor = renderer.material.color;
 	}
 	
 	void Update () 
     {
-        if (Input.GetMouseButton(0))
-        {
-             Move(Vec.xy(Camera.main.ScreenToWorldPoint(Input.mousePosition)));
-        }
-        if (Input.GetMouseButton(1))
-        {
-            Vector2 mousePos = Vec.xy(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            Vector2 toMouse = mousePos - Vec.xy(transform.position);
-            toMouse.Normalize();
-            _targetLookAt = toMouse;
-        }
+		if (_active) {
+			renderer.material.color = Color.yellow;
+			if (Input.GetMouseButtonDown (0)) {
+				if(Vector2.Distance(Vec.xy (Camera.main.ScreenToWorldPoint (Input.mousePosition)), transform.position)>0.6f){
+					Move (Vec.xy (Camera.main.ScreenToWorldPoint (Input.mousePosition)));
+				} 
+				_active = false;
+			}
+			if (Input.GetMouseButton (1)) {
+					Vector2 mousePos = Vec.xy (Camera.main.ScreenToWorldPoint (Input.mousePosition));
+					Vector2 toMouse = mousePos - Vec.xy (transform.position);
+					toMouse.Normalize ();
+					_targetLookAt = toMouse;
+			}
+		} else {
+			renderer.material.color = _startcolor;
+			if (Input.GetMouseButtonDown (0)) {
+				if(Vector2.Distance(Vec.xy (Camera.main.ScreenToWorldPoint (Input.mousePosition)), transform.position)<0.6f){
+					_active = true;
+				}
+			}
+		}
 	}
 
     void FixedUpdate()
