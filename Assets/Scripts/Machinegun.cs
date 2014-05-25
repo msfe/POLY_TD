@@ -1,29 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Shotgun : MonoBehaviour {
-
+public class Machinegun : MonoBehaviour {
+	
 	public Transform BulletPrefab;
 	private HeroBehaviour hero;
-
+	
 	private bool ATTACK_WHILE_MOVING = false;
-	private float ATTACK_DOWNTIME = 100.0f;
-	private float ATTACK_MOUNTTIME = 20.0f; 
-	private float BULLET_SPREAD = 0.3f;
+	private float ATTACK_DOWNTIME = 20.0f;
+	private float ATTACK_MOUNTTIME = 200.0f; 
+	private float BULLET_SPREAD = 0.15f;
 	private float BULLET_SPEED = 5.0f;
-	private float BULLET_DAMAGE = 4.0f;
-	private int BULLETS_PER_ATTACK = 5;
-
+	private float BULLET_DAMAGE = 2.0f;
+	private int BULLETS_PER_ATTACK = 1;
+	
 	private float fireCounter;
 	private float mountCounter;
-
+	
 	// Use this for initialization
 	void Start () {
 		hero = this.GetComponent<HeroBehaviour> ();
 		fireCounter = 0;
 		mountCounter = 0;
 	}
-
+	
 	void Update () {
 		if (hero.isStanding() || ATTACK_WHILE_MOVING) {
 			if (fireCounter <= 0 && mountCounter <= 0) {
@@ -42,7 +42,7 @@ public class Shotgun : MonoBehaviour {
 			fireCounter--;
 		}
 	}
-
+	
 	public void Attack(){
 		Transform t = (Transform)Instantiate (BulletPrefab, transform.position, Quaternion.identity);
 		BulletData bullet = t.GetComponent<BulletData> ();
