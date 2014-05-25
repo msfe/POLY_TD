@@ -7,9 +7,8 @@ public class EnemyBehaviour : MonoBehaviour {
     public float MoveForce;
     public float AngularForce;
     public float Drag { get { return rigidbody2D.drag; } set { rigidbody2D.drag = value; } }
-    public Waypoints _waypoints;
 
-	public float ATTACK_DOWNTIME = 60;
+	public float ATTACK_DOWNTIME = 150;
 	public float ATTACK_DAMAGE = 5;
 
 	private bool _closeToOrphanage;
@@ -24,21 +23,23 @@ public class EnemyBehaviour : MonoBehaviour {
 	void Start () 
     {
 		Health = 20;
-		_closeToOrphanage = true;
+		_closeToOrphanage = false;
 		fireCounter = 0;
 	}
 	
 	void Update () 
     {
-		if (_closeToOrphanage) {
-				if (fireCounter <= 0) {
-					Attack ();
-					fireCounter = ATTACK_DOWNTIME;
-				} else {
-						fireCounter--;
-				}
-		} else if (fireCounter > 0) {
-				fireCounter--;
+		if (_closeToOrphanage) 
+		{
+			if (fireCounter <= 0) 
+			{
+				Attack ();
+				fireCounter = ATTACK_DOWNTIME;
+			}
+		}
+		if (fireCounter > 0) 
+		{
+			fireCounter--;
 		}
 	}
 

@@ -26,7 +26,7 @@ public class OrphanageBehaviour : MonoBehaviour {
 		_health -= amount;
 		if (_health < 0 && !_destroyed) {
 			_destroyed = true;
-			//TODO add awesome effects
+			Application.LoadLevel(0);
 		}
 	}
 

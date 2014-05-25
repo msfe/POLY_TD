@@ -12,11 +12,12 @@ public class SingleUnitGroup : MonoBehaviour
     GroupMembers _members;
     float _pathPosition;
     Vector2 _target;
+	Vector2 _attackingPosition;
 
     void Start()
     {
         _members = GetComponent<GroupMembers>();
-
+		_attackingPosition = _waypoints.getFinalPoint ();
         _pathPosition = 0;
         updateTarget();
     }
@@ -51,6 +52,11 @@ public class SingleUnitGroup : MonoBehaviour
             _target = _waypoints.getPoint(_pathPosition); 
             enemy.MoveTarget = _target;
             transform.position = _target;
+
+			if(Vector2.Distance(_target,_attackingPosition)<0.01f)
+			{
+				enemy.setCloseToOrphanage(true);
+			}
         }
     }
 }

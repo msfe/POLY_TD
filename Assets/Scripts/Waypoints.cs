@@ -64,6 +64,11 @@ public class Waypoints : MonoBehaviour {
 		float y = former.y *(1 - ratio) + next.y * (ratio);
 
 		return new Vector2(x,y);
-		}
+	}
+
+	public Vector2 getFinalPoint()
+	{
+		return wayPoints [wayPoints.Count - 1];
+	}
 
 }
