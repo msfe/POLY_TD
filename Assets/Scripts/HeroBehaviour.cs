@@ -17,6 +17,7 @@ public class HeroBehaviour : MonoBehaviour {
     {
 		_active = false;
 		_startcolor = renderer.material.color;
+		_moveTarget = Vec.xy (transform.position);
 	}
 	
 	void Update () 
