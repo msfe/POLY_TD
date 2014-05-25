@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15cfede2415da274692b1ed54fca1640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interval: 5
+  Interval: 3
   _waypoints: {fileID: 271002953}
   _singleEnemyPrefab: {fileID: 400000, guid: 12c9e00050636ed499101802be9a5f95, type: 2}
   _simpleGroupPrefab: {fileID: 400002, guid: df00a583672903a43a4a2046e40c3690, type: 2}
