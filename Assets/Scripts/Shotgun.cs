@@ -6,7 +6,7 @@ public class Shotgun : MonoBehaviour {
 	public Transform BulletPrefab;
 	private HeroBehaviour hero;
 
-	private float ATTACK_DOWNTIME = 90.0f;
+	private float ATTACK_DOWNTIME = 100.0f;
 	private float BULLET_SPREAD = 0.3f;
 	private float BULLET_SPEED = 5.0f;
 	private float BULLET_DAMAGE = 4.0f;

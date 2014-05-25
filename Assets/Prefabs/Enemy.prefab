@@ -85,7 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e2a65b27c6c474dab98a63a8bb46d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImpulseMagnitude: .300000012
+  _enemy: {fileID: 0}
+  ImpulseMagnitude: .699999988
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
